@@ -92,21 +92,6 @@
       }
     }
 
-    // function colors(x) {
-    //   setTimeout(function(){
-    //     if (x == 1) {
-    //       player1Background.css("background-color", "lightsalmon");
-    //     } else {
-    //       player2Background.css("background-color", "lightblue");
-    //     }
-    //   }, 3000);
-    //   if (x == 1) {
-    //     player1Background.css("background-color", "white");
-    //   } else {
-    //     player2Background.css("background-color", "white");
-    //   }
-    // }
-    //
     player1ShootButton.click(function(){
 
       var hitCheck = getRandomInt(0, 10);
