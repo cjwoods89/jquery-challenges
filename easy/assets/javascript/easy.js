@@ -15,7 +15,6 @@
    * https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
    */
 
-  myStorage = localStorage;
   var saveButton = $('#save-button');
   var loadButton = $('#load-button');
 
@@ -39,9 +38,8 @@
 
       // console.log('save button pressed');
 
-      myStorage = getText();
-
-      console.log(myStorage);
+      localStorage.setItem('key1', getText());
+      console.log(localStorage.getItem('key1'));
 
   });
 
@@ -49,10 +47,8 @@
 
       // console.log('load button pressed');
 
-      setText(myStorage);
-
-      console.log(myStorage);
-
+      setText(localStorage.getItem('key1'));
+      console.log(localStorage.getItem('key1'));
 
   });
 
