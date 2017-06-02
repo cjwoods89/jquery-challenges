@@ -15,7 +15,14 @@
     .clear {
       clear: both;
     }
+    .scroll {
+      display: none;
+      position: absolute;
+      right: -200px;
+      width: 200px;
+    }
   </style>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheets/stylesheet.css">
 </head>
 <body>
   <div style="width: 700px;margin: 0 auto;">
@@ -51,7 +58,13 @@
       </div>
     </div>
     <div class="clear"></div>
+    <div id="container">
+      <div id="scroll"><h4>¡¡¡ GOAL !!!</h4></div>
+    </div>
+
   </div>
+  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="http://localhost:35729/livereload.js"></script>
   <script src="assets/javascript/medium.js"></script>
 </body>
 </html>

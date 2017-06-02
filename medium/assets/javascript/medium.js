@@ -42,6 +42,122 @@
   //code in here wont run until page loads
   $(function(){
 
+    // Player One elements
+    var player1ShootButton = $("#teamone-shoot");
+    var player1ShootCounter = $("#teamone-numshots");
+    var player1HitCounter = $("#teamone-numhits");
+    var player1Background = $(".left");
+
+    // Player Two elements
+    var player2ShootButton = $("#teamtwo-shoot");
+    var player2ShootCounter = $("#teamtwo-numshots");
+    var player2HitCounter = $("#teamtwo-numhits");
+    var player2Background = $(".right");
+
+
+    // Reset elements
+    var resetButton = $("#reset");
+    var resetCounter = $("#num-resets");
+
+    // Other elements
+    var goal = $("#scroll");
+
+    // $(document).ready(function(){
+    //   $('.scroll').animate({right: $(document).width()}, 3000);
+    // });
+
+
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+
+    function scrollText(x) {
+      setTimeout(function(){
+        goal.css("display", "none");
+        player1ShootButton.css("display", "block");
+        player2ShootButton.css("display", "block");
+        if (x == 1) {
+          player1Background.css("background-color", "white");
+        } else {
+          player2Background.css("background-color", "white");
+        }
+      }, 1000);
+      goal.css("display", "block");
+      player1ShootButton.css("display", "none");
+      player2ShootButton.css("display", "none");
+      if (x == 1) {
+        player1Background.css("background-color", "lightsalmon");
+      } else {
+        player2Background.css("background-color", "lightblue");
+      }
+    }
+
+    // function colors(x) {
+    //   setTimeout(function(){
+    //     if (x == 1) {
+    //       player1Background.css("background-color", "lightsalmon");
+    //     } else {
+    //       player2Background.css("background-color", "lightblue");
+    //     }
+    //   }, 3000);
+    //   if (x == 1) {
+    //     player1Background.css("background-color", "white");
+    //   } else {
+    //     player2Background.css("background-color", "white");
+    //   }
+    // }
+    //
+    player1ShootButton.click(function(){
+
+      var hitCheck = getRandomInt(0, 10);
+
+      // Increase shoot each button click
+      var newCounter = parseInt(player1ShootCounter.html()) + 1;
+      player1ShootCounter.html(newCounter);
+
+      // Give 50% chance to score after shot
+      if (hitCheck > 5) {
+        var hitCount = parseInt(player1HitCounter.html()) + 1;
+        player1HitCounter.html(hitCount);
+        scrollText(1);
+      }
+
+    });
+
+    player2ShootButton.click(function(){
+
+      var hitCheck = getRandomInt(0, 10);
+
+      // Increase shoot each button click
+      var newCounter = parseInt(player2ShootCounter.html()) + 1;
+      player2ShootCounter.html(newCounter);
+
+      // Give 50% chance to score after shot
+      if (hitCheck > 5) {
+        var hitCount = parseInt(player2HitCounter.html()) + 1;
+        player2HitCounter.html(hitCount);
+        scrollText(2);
+      }
+
+    });
+
+    resetButton.click(function(){
+
+      var hitCheck = getRandomInt(0, 10);
+
+      // Increase reset each button click
+      var newCounter = parseInt(resetCounter.html()) + 1;
+      resetCounter.html(newCounter);
+
+      // Reset the board when pressed
+      player1ShootCounter.html(0);
+      player1HitCounter.html(0);
+      player2ShootCounter.html(0);
+      player2HitCounter.html(0);
+
+      console.log("Reset the board");
+
+    });
 
 
   })
