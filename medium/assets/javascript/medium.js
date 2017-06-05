@@ -46,13 +46,11 @@
     var player1ShootButton = $("#teamone-shoot");
     var player1ShootCounter = $("#teamone-numshots");
     var player1HitCounter = $("#teamone-numhits");
-    var player1Background = $(".left");
 
     // Player Two elements
     var player2ShootButton = $("#teamtwo-shoot");
     var player2ShootCounter = $("#teamtwo-numshots");
     var player2HitCounter = $("#teamtwo-numhits");
-    var player2Background = $(".right");
 
 
     // Reset elements
@@ -61,6 +59,7 @@
 
     // Other elements
     var goal = $("#scroll");
+    var pageBackground = $("body");
 
     // $(document).ready(function(){
     //   $('.scroll').animate({right: $(document).width()}, 3000);
@@ -76,19 +75,17 @@
         goal.css("display", "none");
         player1ShootButton.css("display", "block");
         player2ShootButton.css("display", "block");
-        if (x == 1) {
-          player1Background.css("background-color", "white");
-        } else {
-          player2Background.css("background-color", "white");
-        }
+        pageBackground.css("background-color", "white");
+        
       }, 1000);
       goal.css("display", "block");
       player1ShootButton.css("display", "none");
       player2ShootButton.css("display", "none");
       if (x == 1) {
-        player1Background.css("background-color", "lightsalmon");
+        // player1Background.css("background-color", "lightsalmon");
+        pageBackground.css("background-color", "lightsalmon");
       } else {
-        player2Background.css("background-color", "lightblue");
+        pageBackground.css("background-color", "lightblue");
       }
     }
 

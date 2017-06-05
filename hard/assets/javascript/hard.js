@@ -35,8 +35,43 @@
    //code in here wont run until page loads
    $(function(){
 
+     var feedTitle = $(".panel h1");
+     var demoFeed = $(".row p:contains('Bacon')");
+
+     demoFeed.html(demoFeed.html().replace('Bacon','LASER VISION'));
+
+    $(".vertical-nav .section:nth-child(odd)").hide();
+
+    // $(".post:nth-child(5)").hide();
+
+    feedTitle.click(function(){
+
+      if (feedTitle.css("color") == "rgb(51, 51, 51)") {
+
+        feedTitle.css({"color": "rgb(255, 0, 0)"})
+
+      } else {
+
+        feedTitle.css({"color": "rgb(51, 51, 51)"})
+
+      }
+
+    });
+
+    function oddOrEven(num){
+      if(num % 2 == 0){
+          return "even";
+      }
+
+      return "odd";
+    }
+
+    function pullNumber(x){
+      x.split("");
+
+    }
 
 
-   })
+  });
 
  })();
