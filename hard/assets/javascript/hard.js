@@ -38,11 +38,7 @@
      var feedTitle = $(".panel h1");
      var demoFeed = $(".row p:contains('Bacon')");
 
-     demoFeed.html(demoFeed.html().replace('Bacon','LASER VISION'));
-
-    $(".vertical-nav .section:nth-child(odd)").hide();
-
-    // $(".post:nth-child(5)").hide();
+    // First Problem
 
     feedTitle.click(function(){
 
@@ -58,18 +54,17 @@
 
     });
 
-    function oddOrEven(num){
-      if(num % 2 == 0){
-          return "even";
-      }
+    // Second Problem
+    $(".vertical-nav .section:nth-child(odd)").hide();
 
-      return "odd";
-    }
+   // Third Problem
+   demoFeed.html(demoFeed.html().replace('Bacon','LASER VISION'));
 
-    function pullNumber(x){
-      x.split("");
+    // Fourth Problem
+    $(".post").slice(-2).hide();
 
-    }
+    // Fifth Problem
+
 
 
   });
