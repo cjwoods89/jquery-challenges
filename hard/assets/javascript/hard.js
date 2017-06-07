@@ -65,7 +65,7 @@
 
     // Fifth Problem
 
-
+    $(".hide-for-small img").hide();
 
   });
 
